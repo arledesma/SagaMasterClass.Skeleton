@@ -21,13 +21,6 @@
             RequestTimeout(TimeSpan.FromSeconds(20), new OrderTimeout(Data.OrderId));
         }
 
-        protected override void ConfigureHowToFindSaga(SagaPropertyMapper<SalesSagaData> mapper)
-        {
-            mapper.ConfigureMapping<PlaceOrder>(x => x.OrderId).ToSaga(x => x.OrderId);
-            mapper.ConfigureMapping<CancelOrder>(x => x.OrderId).ToSaga(x => x.OrderId);
-            mapper.ConfigureMapping<OrderTimeout>(x => x.OrderId).ToSaga(x => x.OrderId);
-        }
-
         public void Handle(PlaceOrder message)
         {
             Data.IsPlaced = true;
@@ -46,6 +39,13 @@
             {
                 Bus.Publish(new OrderAbandoned(Data.OrderId));
             }
+        }
+
+        protected override void ConfigureHowToFindSaga(SagaPropertyMapper<SalesSagaData> mapper)
+        {
+            mapper.ConfigureMapping<PlaceOrder>(x => x.OrderId).ToSaga(x => x.OrderId);
+            mapper.ConfigureMapping<CancelOrder>(x => x.OrderId).ToSaga(x => x.OrderId);
+            mapper.ConfigureMapping<OrderTimeout>(x => x.OrderId).ToSaga(x => x.OrderId);
         }
     }
 }
