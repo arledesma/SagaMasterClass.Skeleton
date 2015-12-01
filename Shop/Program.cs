@@ -56,10 +56,10 @@
 
             if (!string.IsNullOrEmpty(promptContext))
             {
-                promptContext = $" [{promptContext}]";
+                promptContext = string.Format(" [{0}]", promptContext);
             }
 
-            Console.Out.Write($"Shop{promptContext}>");
+            Console.Out.Write("Shop{0}>", promptContext);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Shop
             Bus = bus;
         }
 
-        public ISendOnlyBus Bus { get; }
+        public ISendOnlyBus Bus { get; private set; }
 
         /// <summary>
         /// Retrieves the specified type from the commandContext.

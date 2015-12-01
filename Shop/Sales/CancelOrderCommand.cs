@@ -21,7 +21,7 @@ namespace Sales
                 OrderId = cart.OrderId
             });
 
-            Console.Out.WriteLine($"Order {cart.OrderId} has been canceled");
+            Console.Out.WriteLine("Order {0} has been canceled", cart.OrderId);
             context.Remove<ShoppingCart>();
         }
     }

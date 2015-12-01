@@ -7,7 +7,7 @@
             OrderId = orderId;
         }
 
-        public string OrderId { get; }
+        public string OrderId { get; private set; }
 
         public class OrderItem
         {

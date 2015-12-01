@@ -30,7 +30,7 @@ namespace Sales
                 OrderValue = orderValue
             });
 
-            Console.Out.WriteLine($"Thank you for your order, your order confirmation should arrive shortly - {cart.OrderId}");
+            Console.Out.WriteLine("Thank you for your order, your order confirmation should arrive shortly - {0}", cart.OrderId);
             context.Remove<ShoppingCart>();
         }
     }

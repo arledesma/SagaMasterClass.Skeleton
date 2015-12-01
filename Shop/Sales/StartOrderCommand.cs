@@ -12,7 +12,7 @@
 
             if (context.TryGet(out currentCart))
             {
-                Console.Out.WriteLine($"Order {currentCart.OrderId} is currently active, please use PlaceOrder|CancelOrder to complete it first");
+                Console.Out.WriteLine("Order {0} is currently active, please use PlaceOrder|CancelOrder to complete it first", currentCart.OrderId);
 
                 return;
             }
@@ -23,7 +23,7 @@
             {
                 OrderId = orderId
             });
-            Console.Out.WriteLine($"Order {orderId} created, use PlaceOrder|CancelOrder to proceed");
+            Console.Out.WriteLine("Order {0} created, use PlaceOrder|CancelOrder to proceed", orderId);
         }
     }
 }

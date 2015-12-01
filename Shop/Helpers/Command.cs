@@ -16,8 +16,13 @@
 
         public static Command Parse(string commandline)
         {
-            var parts = commandline?.Split(' ');
-            if (parts == null || !parts.Any())
+            if (commandline == null)
+            {
+                return new NotFoundCommand();
+            }
+
+            var parts = commandline.Split(' ');
+            if (!parts.Any())
             {
                 return new NotFoundCommand();
             }

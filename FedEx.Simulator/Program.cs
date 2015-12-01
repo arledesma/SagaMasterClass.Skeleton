@@ -27,7 +27,7 @@
                 Console.WriteLine("What behavior would you like?");
                 Console.WriteLine("[1] TimeoutException");
                 Console.WriteLine("[2] Success (default)");
-                Console.WriteLine($"[3] Delay with {FedEx.TimeoutInSeconds + 5} seconds");
+                Console.WriteLine("[3] Delay with {0} seconds", FedEx.TimeoutInSeconds + 5);
                 Console.WriteLine();
                 Console.WriteLine("Please press 'q' to exit.");
 
@@ -39,7 +39,7 @@
                     if (int.TryParse(key, out index))
                     {
                         BehaviorHolder.Behavior = behaviors[index];
-                        Console.Out.WriteLine($"{BehaviorHolder.Behavior.GetType().Name} selected");
+                        Console.Out.WriteLine("{0} selected", BehaviorHolder.Behavior.GetType().Name);
                     }
                 } while (key != "q");
             }
@@ -55,7 +55,7 @@
 
         public static void AddAddress(string address, string domain, string user)
         {
-            var args = $@"http add urlacl url={address} user={domain}\{user}";
+            var args = string.Format("http add urlacl url={0} user={1}\\{2}", address, domain, user);
 
             var psi = new ProcessStartInfo("netsh", args);
             psi.Verb = "runas";
@@ -63,7 +63,7 @@
             psi.WindowStyle = ProcessWindowStyle.Hidden;
             psi.UseShellExecute = true;
 
-            Process.Start(psi)?.WaitForExit();
+            Process.Start(psi).WaitForExit();
         }
     }
 }
