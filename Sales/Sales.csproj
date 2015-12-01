@@ -63,9 +63,17 @@
   <ItemGroup>
     <Compile Include="Messages\CancelOrder.cs" />
     <Compile Include="Messages\IOrderCommand.cs" />
+    <Compile Include="Messages\IOrderEvent.cs" />
+    <Compile Include="Messages\OrderAbandoned.cs" />
+    <Compile Include="Messages\OrderCanceled.cs" />
+    <Compile Include="Messages\OrderPlaced.cs" />
+    <Compile Include="Messages\OrderStarted.cs" />
+    <Compile Include="Messages\OrderTimeout.cs" />
     <Compile Include="Messages\PlaceOrder.cs" />
     <Compile Include="Messages\StartOrder.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Sagas\SalesSaga.cs" />
+    <Compile Include="Sagas\SalesSagaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
