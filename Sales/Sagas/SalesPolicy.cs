@@ -14,7 +14,8 @@
         public void Handle(StartOrder message)
         {
             Data.OrderId = message.OrderId;
-            this.Bus.Publish(new OrderStarted
+            Data.State = OrderState.Tentative;
+            Bus.Publish(new OrderStarted
             {
                 OrderId = Data.OrderId
             });
@@ -23,19 +24,19 @@
 
         public void Handle(PlaceOrder message)
         {
-            Data.IsPlaced = true;
+            Data.State = OrderState.Placed;
             Bus.Publish(new OrderPlaced{OrderId = message.OrderId});
         }
 
         public void Handle(CancelOrder message)
         {
-            Data.IsCancelled = true;
+            Data.State = OrderState.Canceled;
             Bus.Publish(new OrderCanceled(Data.OrderId));
         }
 
         public void Timeout(OrderTimeout state)
         {
-            if (Data.IsCancelled || Data.IsPlaced)
+            if (Data.State != OrderState.Tentative)
             {
                 return;
             }

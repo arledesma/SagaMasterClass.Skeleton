@@ -6,7 +6,6 @@
     {
         [Unique]
         public virtual string OrderId { get; set; }
-        public virtual bool IsCancelled { get; set; }
-        public virtual bool IsPlaced { get; set; }
+        public virtual OrderState State { get; set; }
     }
 }
