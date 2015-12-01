@@ -61,16 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Messages\CancelOrder.cs" />
-    <Compile Include="Messages\IOrderCommand.cs" />
-    <Compile Include="Messages\IOrderEvent.cs" />
-    <Compile Include="Messages\OrderAbandoned.cs" />
-    <Compile Include="Messages\OrderCanceled.cs" />
-    <Compile Include="Messages\OrderPlaced.cs" />
-    <Compile Include="Messages\OrderStarted.cs" />
-    <Compile Include="Messages\OrderTimeout.cs" />
-    <Compile Include="Messages\PlaceOrder.cs" />
-    <Compile Include="Messages\StartOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Sagas\OrderState.cs" />
     <Compile Include="Sagas\SalesPolicy.cs" />
@@ -84,6 +74,10 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Billing.Contracts\Billing.Contracts.csproj">
+      <Project>{e978479d-347b-4b3e-8ec7-b08369b5eafe}</Project>
+      <Name>Billing.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomerCare.Contracts\CustomerCare.Contracts.csproj">
       <Project>{75c8239c-e97d-4340-b6b3-b033b1fe5e02}</Project>
       <Name>CustomerCare.Contracts</Name>

@@ -44,7 +44,17 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CancelOrder.cs" />
+    <Compile Include="IOrderCommand.cs" />
+    <Compile Include="IOrderEvent.cs" />
+    <Compile Include="OrderAbandoned.cs" />
+    <Compile Include="OrderCanceled.cs" />
+    <Compile Include="OrderPlaced.cs" />
+    <Compile Include="OrderStarted.cs" />
+    <Compile Include="OrderTimeout.cs" />
+    <Compile Include="PlaceOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

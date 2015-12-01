@@ -1,6 +1,7 @@
 ﻿namespace Sales.Sagas
 {
     using System;
+    using Contracts;
     using Messages;
     using NServiceBus;
     using NServiceBus.Saga;
