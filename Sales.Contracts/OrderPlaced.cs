@@ -6,4 +6,11 @@ namespace Sales.Contracts
     {
         public string OrderId { get; set; }
     }
+
+    public class DummyOrderPlaced : IHandleMessages<OrderPlaced>
+    {
+        public void Handle(OrderPlaced message)
+        {
+        }
+    }
 }

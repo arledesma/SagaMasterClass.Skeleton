@@ -1,7 +1,10 @@
 namespace Sales.Messages
 {
-    public class OrderAbandoned
+    using NServiceBus;
+
+    public class OrderAbandoned : IEvent
     {
+        public OrderAbandoned() { }
         public OrderAbandoned(string orderId)
         {
             OrderId = orderId;

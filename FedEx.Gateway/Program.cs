@@ -10,7 +10,7 @@
     {
         static void Main(string[] args)
         {
-            LogManager.Use<DefaultFactory>().Level(LogLevel.Error);
+            LogManager.Use<DefaultFactory>().Level(LogLevel.Debug);
 
             var busConfiguration = new BusConfiguration();
             busConfiguration.UsePersistence<InMemoryPersistence>();

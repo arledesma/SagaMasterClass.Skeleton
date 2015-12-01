@@ -3,7 +3,6 @@
     using System;
     using Billing.Contracts;
     using Messages;
-    using NServiceBus;
     using NServiceBus.Saga;
     using Sales.Contracts;
 
@@ -33,16 +32,6 @@
 
             if((Data.State & ShippingStates.Placed) == ShippingStates.Placed)
                 Bus.Send(new ShipOrder{OrderId = message.OrderId});
-        }
-    }
-
-    
-
-    public class DummyHandler : IHandleMessages<ShipOrder>
-    {
-        public void Handle(ShipOrder message)
-        {
-            Console.WriteLine("Order {0} shipped", message.OrderId);
         }
     }
 }

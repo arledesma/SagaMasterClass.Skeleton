@@ -11,10 +11,10 @@
     {
         static void Main()
         {
-            LogManager.Use<DefaultFactory>().Level(LogLevel.Error);
+            LogManager.Use<DefaultFactory>().Level(LogLevel.Debug);
 
             var busConfiguration = new BusConfiguration();
-
+            busConfiguration.Transactions().DisableDistributedTransactions();
             busConfiguration.UsePersistence<NHibernatePersistence>()
                 .ConnectionString(@"Data Source=localhost;Initial Catalog=Shipping;Trusted_Connection=True;");
 

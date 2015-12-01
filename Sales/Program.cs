@@ -14,7 +14,7 @@
             LogManager.Use<DefaultFactory>().Level(LogLevel.Error);
 
             var busConfiguration = new BusConfiguration();
-
+            
             busConfiguration.UsePersistence<NHibernatePersistence>()
                 .ConnectionString(@"Data Source=localhost;Initial Catalog=Sales;Trusted_Connection=True;");
 
