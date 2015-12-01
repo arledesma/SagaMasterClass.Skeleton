@@ -72,7 +72,7 @@
     <Compile Include="Messages\PlaceOrder.cs" />
     <Compile Include="Messages\StartOrder.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Sagas\SalesSaga.cs" />
+    <Compile Include="Sagas\SalesPolicy.cs" />
     <Compile Include="Sagas\SalesSagaData.cs" />
   </ItemGroup>
   <ItemGroup>

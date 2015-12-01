@@ -5,7 +5,7 @@
     using NServiceBus;
     using NServiceBus.Saga;
 
-    public class SalesSaga : Saga<SalesSagaData>
+    public class SalesPolicy : Saga<SalesSagaData>
         , IAmStartedByMessages<StartOrder>
         , IHandleMessages<PlaceOrder>
         , IHandleMessages<CancelOrder>
