@@ -35,10 +35,13 @@
 
         public void Timeout(OrderTimeout state)
         {
-            if (!Data.IsCancelled && !Data.IsPlaced)
+            if (Data.IsCancelled || Data.IsPlaced)
             {
-                Bus.Publish(new OrderAbandoned(Data.OrderId));
+                return;
             }
+
+            Bus.Publish(new OrderAbandoned(Data.OrderId));
+            MarkAsComplete();
         }
 
         protected override void ConfigureHowToFindSaga(SagaPropertyMapper<SalesSagaData> mapper)
