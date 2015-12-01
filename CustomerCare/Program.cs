@@ -16,7 +16,7 @@
             var busConfiguration = new BusConfiguration();
 
             busConfiguration.UsePersistence<NHibernatePersistence>()
-                .ConnectionString(@"Server=localhost;Database=CustomerCare;Trusted_Connection=True;");
+                .ConnectionString(@"Data Source=localhost;Initial Catalog=CustomerCare;Trusted_Connection=True;");
 
             busConfiguration.EnableInstallers();
 
